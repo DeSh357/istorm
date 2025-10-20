@@ -1,0 +1,36 @@
+<div class="login" [formGroup]="loginForm">
+  <div class="container">
+    <div class="auth-form">
+      <div class="form-title">Войти в личный кабинет</div>
+      <div class="form-inputs">
+        <div class="form-input">
+          <input type="text" class="input" [ngStyle]="{'border-color': loginForm.get('email')?.invalid
+          && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) ? 'red' : ''}"
+                 placeholder="Электронная почта" formControlName="email">
+          <div class="error-message" style="color: red" *ngIf="loginForm.get('email')?.invalid
+          && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">Заполните поле
+          </div>
+        </div>
+        <div class="form-input">
+          <input type="password" class="input" [ngStyle]="{'border-color': loginForm.get('password')?.invalid
+          && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) ? 'red' : ''}"
+                 placeholder="Пароль" formControlName="password">
+          <div class="error-message" style="color: red" *ngIf="loginForm.get('password')?.invalid
+          && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">Заполните поле
+          </div>
+        </div>
+        <div class="form-checkbox">
+          <div class="form-checkbox-wrapper">
+            <input type="checkbox" class="input" id="rememberMe" formControlName="rememberMe">
+            <label for="rememberMe">Запомнить меня</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-button button" [class.disabled]="loginForm.invalid" (click)="login()">Войти</div>
+      <div class="form-link">
+        Нет аккаунта? <a routerLink="/signup">Пройдите регистрацию</a>
+      </div>
+    </div>
+    <div class="page-image" style="background-image: url('/assets/images/pages/login.png')"></div>
+  </div>
+</div>

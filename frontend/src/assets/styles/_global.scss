@@ -1,0 +1,167 @@
+@import "variables";
+@import "mixins";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: $text-primary;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: $text-secondary;
+  border-radius: 5px;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px 33px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+
+  &.disabled {
+    background-color: #B9D5FD;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  border: 2px solid $text-secondary;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 18px 20px;
+  color: $text-secondary;
+  font-size: 14px;
+  width: 422px;
+
+  &::placeholder {
+    color: #A8ABA7;
+  }
+
+  option {
+    color: $text-primary;
+  }
+}
+
+.owl-theme {
+
+  .owl-dots {
+    z-index: 2;
+    position: absolute;
+    bottom: 20px;
+    width: 70px;
+    left: 585px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .owl-dot {
+
+      span {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #FFF;
+        box-sizing: border-box;
+        background-color: transparent;
+
+
+      }
+
+      &:hover span {
+        background-color: rgba(255, 255, 255, 0.34);
+      }
+
+      &.active span {
+        background-color: #FFF;
+      }
+    }
+  }
+}
+
+.mat-dialog-container {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.popup {
+  position: relative;
+  padding: 71px 0;
+  text-align: center;
+
+  .popup-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+  }
+
+  .popup-content {
+    margin: 0 auto;
+    max-width: 422px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .popup-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+      max-width: 406px;
+    }
+
+    .popup-form {
+      .input {
+        margin-bottom: 5px;
+      }
+
+      .button {
+        margin-top: 15px;
+        width: 422px;
+      }
+    }
+
+    .popup-error {
+      margin-top: 10px;
+      color: red;
+      font-size: 14px;
+    }
+  }
+
+  .popup-success {
+    padding: 68px 0;
+    margin: 0 auto;
+    max-width: 443px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .popup-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    .popup-success-text {
+      font-weight: 500;
+      font-size: 14px;
+      color: #1E1A2B;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      width: 73px;
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+  }
+}
+
+

@@ -1,0 +1,27 @@
+@import "../../../../assets/styles/auth-form";
+
+.login {
+  padding: 106px 0 92px 0;
+  position: relative;
+
+  .container {
+    display: flex;
+    gap: 185px;
+    align-items: center;
+
+    .auth-form {
+      input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    .page-image {
+      width: 607px;
+      height: 390px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}

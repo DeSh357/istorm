@@ -1,0 +1,69 @@
+@import "variables";
+
+.auth-form {
+  .form-title {
+    font-family: 'Lora', sans-serif;
+    font-size: 36px;
+    color: $text-secondary;
+    margin-bottom: 40px;
+    line-height: 130%;
+  }
+
+  .form-inputs {
+    margin-bottom: 40px;
+    max-width: 422px;
+
+    .form-input {
+      margin-bottom: 5px;
+    }
+
+    .form-checkbox {
+      .form-checkbox-wrapper {
+        display: flex;
+        align-items: baseline;
+        margin-top: 10px;
+
+        input {
+          width: 14px;
+          height: 14px;
+        }
+
+        label {
+          margin-left: 5px;
+          font-size: 14px;
+          line-height: 130%;
+
+          a {
+            color: $text-secondary;
+            text-decoration: underline 1px solid $text-secondary;
+          }
+        }
+      }
+    }
+  }
+
+  .error-message {
+    font-size: 12px;
+  }
+
+  .form-button {
+    width: 422px;
+    margin-bottom: 10px;
+
+    &.disabled {
+      background-color: #a2bad9;
+      cursor: not-allowed;
+    }
+  }
+
+  .form-link {
+    color: $text-primary;
+    font-size: 14px;
+
+    a {
+      margin-left: 7px;
+      text-decoration: none;
+      color: $text-secondary;
+    }
+  }
+}

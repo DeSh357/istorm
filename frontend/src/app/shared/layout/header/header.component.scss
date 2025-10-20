@@ -1,0 +1,71 @@
+@import "../../../../assets/styles/variables";
+
+.header {
+  padding: 40px 100px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+
+    .logo {
+      margin-right: 100px;
+    }
+
+    .header-menu {
+      margin-right: 257px;
+
+      ul {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 429px;
+
+        li {
+          list-style: none;
+
+          a {
+            text-decoration: none;
+            font-size: 16px;
+            color: $text-primary;
+            cursor: pointer;
+
+            &.active {
+              color: $text-secondary;
+            }
+          }
+        }
+      }
+    }
+
+    .header-phone {
+      color: $text-secondary;
+      margin-right: 29px;
+      text-decoration: none;
+      width: 144px;
+      min-width: 144px;
+    }
+
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: $text-primary;
+      cursor: pointer;
+      text-decoration: none;
+      width: 220px;
+
+      svg {
+        min-width: 24px;
+      }
+
+      span {
+        margin-left: 7px;
+      }
+    }
+  }
+}

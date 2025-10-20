@@ -1,0 +1,33 @@
+.blue-spinner {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 16px;
+  background: #3b82f6; /* базовый синий */
+  border-radius: 3px;
+  transform-origin: center -12px;
+  opacity: 0.2;
+  animation: fade 1s linear infinite;
+}
+
+@for $i from 0 through 7 {
+  .bar:nth-child(#{$i + 1}) {
+    transform: translate(-50%, -50%) rotate($i * 45deg);
+    animation-delay: $i * 0.125s;
+  }
+}
+
+/* Анимация плавного "появления" по кругу */
+@keyframes fade {
+  0%   { opacity: 1; background-color: #60a5fa; }
+  50%  { opacity: 0.4; background-color: #1d4ed8; }
+  100% { opacity: 0.2; background-color: #60a5fa; }
+}

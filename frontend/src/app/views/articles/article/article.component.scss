@@ -1,0 +1,298 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.article {
+  padding: 80px 0 120px 0;
+
+  .container {
+    .article-breadcrumbs {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 60px;
+
+      a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #B9D5FD;
+      }
+
+      .breadcrumbs-separator {
+        font-size: 14px;
+        color: #B9D5FD;
+      }
+
+      .breadcrumbs-item {
+        font-weight: 500;
+        font-size: 16px;
+        color: $text-secondary;
+      }
+    }
+
+    .article-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 60px;
+
+      .article-header-text {
+        max-width: 607px;
+        color: $text-secondary;
+
+        .article-title {
+          @include head-lora-38;
+          line-height: 130%;
+          margin-bottom: 40px;
+        }
+
+        .article-description {
+          font-size: 20px;
+          line-height: 130%;
+        }
+      }
+
+      .article-header-image {
+        width: 527px;
+        height: 320px;
+        border-radius: 5px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .article-content {
+      display: flex;
+      justify-content: space-between;
+
+      .article-body::ng-deep {
+        max-width: 818px;
+        margin-bottom: 60px;
+
+        h1 {
+          color: $text-secondary;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        h3 {
+          margin: 40px 0 0 0;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 130%;
+          color: $text-secondary;
+        }
+
+        p {
+          margin: 20px 0 0 0;
+          font-size: 14px;
+          line-height: 130%;
+          color: $text-primary;
+
+          b {
+            font-weight: 500;
+
+          }
+        }
+
+        ul {
+          margin: 20px 0 0 0;
+          padding-left: 8px;
+          list-style: none;
+
+          li {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            &::before {
+              content: '';
+              width: 4px;
+              height: 4px;
+              background-color: $text-primary;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+
+      .article-related {
+        margin-top: 60px;
+
+        .article-related-title {
+          font-family: Lora, sans-serif;
+          font-size: 26px;
+          color: $text-secondary;
+          margin-bottom: 20px;
+        }
+
+        .article-related-cards {
+          display: flex;
+          flex-direction: column;
+          gap: 60px;
+        }
+      }
+
+    }
+
+    .article-links {
+      display: flex;
+      font-weight: 500;
+      font-size: 14px;
+      color: $text-secondary;
+      margin-bottom: 60px;
+
+      span {
+        margin-right: 20px;
+      }
+
+      .article-links-icons {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+    }
+
+    .comments {
+
+      .comments-title {
+        @include head-lora-38;
+      }
+
+      .comments-first {
+        font-size: 14px;
+        color: $text-primary;
+        margin-top: 20px;
+      }
+
+      .comments-auth {
+        margin-top: 20px;
+        font-size: 14px;
+        color: $text-primary;
+
+        a {
+          color: $text-secondary;
+          text-decoration: none;
+        }
+      }
+
+      .comments-create {
+        margin-top: 40px;
+
+        textarea {
+          width: 818px;
+          height: 320px;
+          padding: 20px;
+          border-radius: 3px;
+          box-sizing: border-box;
+          border: 2px solid $text-secondary;
+          font-size: 14px;
+          color: $text-primary;
+          font-family: Montserrat, sans-serif;
+          margin-bottom: 20px;
+
+          &::placeholder {
+            color: #A8ABA7;
+            font-size: 14px;
+          }
+        }
+
+        .button {
+          width: 422px;
+        }
+      }
+
+      .comments-items {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .comment-item {
+          max-width: 854px;
+
+          .comment-head {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+
+            .comment-head-image {
+              display: flex;
+              align-items: center;
+              background-color: #B9D5FD;
+              justify-content: center;
+              border-radius: 50%;
+              border: 2.5px solid $text-secondary;
+              background-repeat: no-repeat;
+              width: 60px;
+              height: 60px;
+              margin-right: 26px;
+            }
+
+            .comment-head-text {
+              font-weight: 600;
+
+              .comment-name {
+                font-size: 18px;
+                color: $text-secondary;
+                margin-bottom: 10px;
+              }
+
+              .comment-date {
+                font-size: 14px;
+                color: #BEBEBE;
+              }
+            }
+          }
+
+          .comment-body {
+            font-size: 14px;
+            line-height: 140%;
+            color: $text-primary;
+            margin-bottom: 39px;
+          }
+
+          .comment-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            .comment-action {
+              display: flex;
+              align-items: center;
+              gap: 3px;
+              cursor: pointer;
+
+              &.active span {
+                color: $text-secondary;
+              }
+
+              span {
+                font-weight: 600;
+                font-size: 14px;
+                color: $text-primary;
+              }
+            }
+          }
+        }
+      }
+
+      .comments-more {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 60px;
+        cursor: pointer;
+
+        span {
+          color: $text-secondary;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="popup">
+  <div class="popup-close" (click)="close()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1.93562" y1="2.64999" x2="13.9564" y2="14.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+      <line x1="13.9236" y1="2.62978" x2="1.90277" y2="14.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="popup-content" *ngIf="!isSuccess">
+    <div class="popup-title">Заявка на услугу</div>
+    <div class="popup-form" [formGroup]="popupForm">
+      <select class="input" formControlName="service">
+        <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+      </select>
+      <input type="text" class="input" placeholder="Ваше имя" formControlName="name">
+      <input type="text" class="input" placeholder="Ваш номер телефона" formControlName="phone">
+      <button class="button" [class.disabled]="popupForm.invalid" (click)="send()">Оставить заявку</button>
+    </div>
+    <div class="popup-error" *ngIf="hasError">произошла ошибка при отправке
+      формы, попробуйте еще раз.</div>
+  </div>
+  <div class="popup-success" *ngIf="isSuccess">
+    <div class="popup-title">Спасибо за вашу заявку!</div>
+    <div class="popup-success-text">Мы свяжемся с вами при первой же возможности.</div>
+    <button class="button" (click)="close()">Окей</button>
+  </div>
+</div>
