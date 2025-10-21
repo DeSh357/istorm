@@ -6,19 +6,19 @@
     <div class="header-menu">
       <ul>
         <li>
-          <a routerLink="/" fragment="services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Услуги</a>
+          <a (click)="scrollTo('/','services')" [class.active]="activeSection === 'services'">Услуги</a>
         </li>
         <li>
-          <a routerLink="/" fragment="about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">О нас</a>
+          <a (click)="scrollTo('/', 'about')" [class.active]="activeSection === 'about'">О нас</a>
         </li>
         <li>
-          <a routerLink="/articles" routerLinkActive="active">Статьи</a>
+          <a routerLink="/articles" routerLinkActive="active" (click)="scrollTo('/articles')">Статьи</a>
         </li>
         <li>
-          <a routerLink="/" fragment="reviews" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Отзывы</a>
+          <a (click)="scrollTo('/','reviews')" [class.active]="activeSection === 'reviews'">Отзывы</a>
         </li>
         <li>
-          <a routerLink="/" fragment="contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Контакты</a>
+          <a (click)="scrollTo('/','contacts')" [class.active]="activeSection === 'contacts'">Контакты</a>
         </li>
       </ul>
     </div>

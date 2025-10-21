@@ -4,7 +4,8 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 import {UserInfoType} from "../../../../types/user-info.type";
 import {HttpErrorResponse} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   userName: string | null = null;
   userEmail: string| null = null;
   userId: string | null = null;
+  activeSection: string = '';
 
   constructor(private authService: AuthService, private _snackBar: MatSnackBar, private router: Router) {
     this.isLogged = this.authService.getIsLoggedIn();
@@ -32,7 +34,13 @@ export class HeaderComponent implements OnInit {
       if (this.isLogged) {
         this.getUserInfo();
       }
-    })
+    });
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.activeSection = ''; // сброс при каждой смене страницы
+    });
   }
 
   logout() {
@@ -89,4 +97,32 @@ export class HeaderComponent implements OnInit {
       })
   }
 
+  scrollTo(page: string,fragment?: string) {
+    this.activeSection = '';
+    if (fragment) {
+      if (this.router.url !== page) {
+        this.router.navigate([page]).then(() => {
+          if (fragment) {
+            setTimeout(() => this.scroll(fragment), 100);
+          }
+        });
+      } else {
+        this.scroll(fragment);
+      }
+    }
+  }
+
+  private scroll(fragment: string) {
+    const element = document.getElementById(fragment);
+    this.activeSection = fragment;
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - 130;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }

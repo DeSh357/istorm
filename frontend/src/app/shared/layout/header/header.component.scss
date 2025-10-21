@@ -2,6 +2,12 @@
 
 .header {
   padding: 40px 100px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
 
   .container {
     display: flex;

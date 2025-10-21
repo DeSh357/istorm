@@ -124,7 +124,7 @@ export class MainComponent implements OnInit {
         type: 'Акция',
         title: this.sanitize('Нужен грамотный <span>копирайтер</span>?'),
         description: 'Весь декабрь у нас действует акция на работу копирайтера.',
-        service: 'Копирайтер'
+        service: 'Копирайтинг'
       },
       {
         type: 'Новость дня',

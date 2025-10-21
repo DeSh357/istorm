@@ -7,7 +7,30 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   color: $text-primary;
+  min-height: 100vh;
 }
+
+app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+app-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+app-signup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 
 .container {
   max-width: 1240px;
